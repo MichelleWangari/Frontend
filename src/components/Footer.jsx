@@ -4,7 +4,7 @@ import Money from "../assets/images/Money.png";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#021006] text-white px-6 py-10 text-sm ">
+    <footer className="bg-[#021006] text-white px-4 py-4 text-sm ">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 ">
         {/* Logo and text */}
         <div>

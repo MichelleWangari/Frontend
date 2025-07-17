@@ -4,6 +4,8 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./components/Home";
 import Login from "./components/Login";
+import About from "./components/About";
+import Faq from "./components/Faq";
 
 // Layout-aware wrapper
 function LayoutWrapper({ children }) {
@@ -25,7 +27,9 @@ function App() {
       <LayoutWrapper>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/About" element={<About />} />
           <Route path="/Login" element={<Login />} />
+          <Route path="/Faq" element={<Faq />} />
         </Routes>
       </LayoutWrapper>
     </Router>

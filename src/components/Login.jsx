@@ -1,15 +1,22 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Login() {
     const [email, setEmail] = useState("");
-    const [chamaId, setChamaId] = useState("");
     const [password, setPassword] = useState("");
+
+    const navigate = useNavigate();
+
+    
 
     const handleSubmit = (e) => {
         e.preventDefault();
         //Add handlelogin logic when backend is ready
-        console.log({email, chamaId, password});
+        console.log({email , password});
+
+        if (email  && password) {
+            navigate("/");
+        }
     };
 
     return (
@@ -26,14 +33,7 @@ export default function Login() {
                         onChange={(e) => setEmail(e.target.value)} className="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-[#475B06]" placeholder="Enter your email" required
                         />
                     </div>
-                    <div>
-                        <label className="block mb-1 text-gray-700 font-medium">Chama ID:</label>
-                        <input
-                        type="text" 
-                        value={chamaId}
-                        onChange={(e) => setChamaId(e.target.value)} className="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-[#475B06]" placeholder="Enter your Chama ID" required
-                        />
-                    </div>
+                    
                     <div>
                         <label className="block mb-1 text-gray-700 font-medium">Password:</label>
                         <input
@@ -42,7 +42,14 @@ export default function Login() {
                         onChange={(e) => setPassword(e.target.value)} className="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-[#475B06]" placeholder="Enter your password" required
                         />
                     </div>
-                    <p className="text-center text-sm text-[#475B06] mt-6">Don't have an account yet?<Link to="/Login" className="text-yellow-800 font-semibold ml-1 hover:underline hover:text-[#F4C542] ">Sign Up</Link></p>
+                       <button
+                        type="submit"
+                        className="w-full bg-yellow-600 hover:bg-yellow-700 text-white font-semibold py-2 px-4 rounded"
+                        >
+                        Login
+                        </button>
+                    <p className="text-center text-sm text-[#475B06] mt-6">Don't have an account yet?<Link to="/Signup" className="text-yellow-800 font-semibold ml-1 hover:underline hover:text-[#F4C542] ">Sign Up</Link></p>
+                    <p className="text-center text-sm text-[#475B06] mt-6">Forgot password?</p>
                 </form>
             </div>
         </div>

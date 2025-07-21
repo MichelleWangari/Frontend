@@ -65,20 +65,15 @@ export default function Faq() {
 
   return (
    <div className="bg-white ">
-        <div
-              className="relative h-[80vh] bg-cover bg-center "
-              style={{ backgroundImage: `url(${FaqHero})` }}
-            >
-              {/* Overlay */}
-              <div className="absolute inset-0 bg-[#475B06] opacity-60"></div>
+        <div className="relative h-[80vh] bg-cover bg-center "style={{ backgroundImage: `url(${FaqHero})` }}>
+            <div className="absolute inset-0 bg-[#475B06] opacity-60"></div>
         
-              {/* Content */}
-            <div className="relative z-10 h-full flex flex-col justify-center items-start px-4 md:px-16 text-left text-[#f7c948]">
-                <h1 className="text-4xl italic md:text-5xl font-bold mb-4  ">Questions</h1>
-                <p className="max-w-xl text-3xl text-white md:text-xl mt-10 font-semibold ">
-                Get to know more about Tujenge via frequently asked questions
-                </p>
-            </div>
+              <div className="relative z-10 h-full flex flex-col justify-center items-start px-4 md:px-16 text-left text-[#f7c948]">
+                  <h1 className="text-4xl italic md:text-5xl font-bold mb-4  ">Questions</h1>
+                  <p className="max-w-xl text-3xl text-white md:text-xl mt-10 font-semibold ">
+                  Get to know more about Tujenge via frequently asked questions
+                  </p>
+              </div>
         </div>
 
     <div className="max-w-5xl mx-auto px-6 py-12 space-y-4">

@@ -39,7 +39,6 @@ export default function About() {
         </div>
       </section>
 
-      {/* Core Values */}
       <section className="py-16 px-6 max-w-6xl mx-auto">
         <h2 className="text-3xl font-bold text-center text-[#475B06] mb-10">
           Our Core Values

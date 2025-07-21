@@ -5,11 +5,7 @@ export default function Hero() {
   return (
     <section className="relative bg-[#475B06] text-white overflow-hidden">
       {/* Wavy White SVG */}
-      <svg
-        className="absolute bottom-[-10px] left-0 w-full z-0"
-        viewBox="0 0 1440 150"
-        xmlns="http://www.w3.org/2000/svg"
-      >
+      <svg className="absolute bottom-[-10px] left-0 w-full z-0" viewBox="0 0 1440 150" xmlns="http://www.w3.org/2000/svg">
         <path
           fill="#ffffff"
           fillOpacity="1"
@@ -17,15 +13,14 @@ export default function Hero() {
         ></path>
       </svg>
 
-      {/* Hero Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 py-24 lg:py-32 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-4">
-        {/* Text Content */}
+  
         <div className="space-y-6">
           <h1 className="text-4xl md:text-5xl font-bold leading-tight">
             Empower Your Future with <span className="text-[#FFD700]">Tujenge</span>
           </h1>
           <p className="text-lg text-gray-200">
-            Tujenge is Kenya’s platform for collective financial empowerment. We make saving
+            Tujenge is Kenya's platform for collective financial empowerment. We make saving
             and investing simple, social, and secure for all — from your chama to your community.
           </p>
           <div className="flex space-x-4">
@@ -44,7 +39,7 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Image Content */}
+       
         <div className="flex justify-center lg:justify-end">
           <img
             src={HeroImage}

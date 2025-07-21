@@ -14,7 +14,7 @@ export default function AboutHero() {
       <div className="relative z-10 h-full flex flex-col items-center justify-center text-center text-[#f7c948] px-4">
         <h1 className="text-4xl md:text-5xl font-bold mb-4">About<br /> Tujenge </h1>
         <p className="max-w-xl text-lg md:text-xl mt-10">
-          Learn how we’re transforming collective saving and investing for communities.
+          Learn how we're transforming collective saving and investing for communities.
         </p>
       </div>
     </div>

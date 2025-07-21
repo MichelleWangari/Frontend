@@ -42,7 +42,7 @@ export default function Navbar() {
               {
                 label: "Save",
                 links: [
-                  { to: "/save/how-it-works", text: "How It Works" },
+                 
                   { to: "/save/group", text: "Group Saving" },
                 ],
               },
@@ -56,8 +56,7 @@ export default function Navbar() {
               {
                 label: "Learn",
                 links: [
-                  { to: "/learn/finance-101", text: "Finance 101" },
-                  { to: "/learn/glossary", text: "Glossary" },
+                  
                   { to: "/learn/how-tujenge-works", text: "How Tujenge Works" },
                 ],
               },
@@ -120,7 +119,7 @@ export default function Navbar() {
             {
               label: "Save",
               links: [
-                { to: "/save/how-it-works", text: "How It Works" },
+              
                 { to: "/save/group", text: "Group Saving" },
               ],
             },
@@ -134,8 +133,7 @@ export default function Navbar() {
             {
               label: "Learn",
               links: [
-                { to: "/learn/finance-101", text: "Finance 101" },
-                { to: "/learn/glossary", text: "Glossary" },
+                
                 { to: "/learn/how-tujenge-works", text: "How Tujenge Works" },
               ],
             },

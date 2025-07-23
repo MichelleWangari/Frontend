@@ -53,12 +53,12 @@ export default function GroupSavings() {
       </div>
 
      
-      <div className="bg-white text-gray-900 py-12 text-center px-4">
-        <h2 className="text-2xl md:text-3xl font-semibold mb-4">Build Wealth Together</h2>
-        <p className="mb-6 text-lg max-w-2xl mx-auto">
+      <div className="bg-white text-[#475B06] py-12 text-center px-4">
+        <h2 className="text-2xl md:text-3xl font-bold mb-4">Build Wealth Together</h2>
+        <p className="mb-6 text-lg max-w-2xl text-gray-900 mx-auto">
           Start a savings plan with your group today and move closer to your financial dreams — one step at a time.
         </p>
-        <button className="bg-[#f7c948] text-[#475B06] px-6 py-3 font-semibold rounded hover:bg-yellow-400 transition">
+        <button className="bg-[#e0b238] text-[#475B06] px-6 py-3 font-semibold rounded hover:bg-[#f7c948] transition">
           Start Saving Now
         </button>
       </div>

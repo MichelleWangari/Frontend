@@ -28,10 +28,10 @@ export default function Navbar() {
                 className="w-full h-full object-cover"
               />
             </div>
-            <span className="text-2xl font-semibold text-[#96b420] leading-none tracking-tight">
+            <span className="text-2xl font-semibold text-[#475B06] leading-none tracking-tight">
               TUJENGE
               <br />
-              <span className="text-yellow-600">KENYA</span>
+              <span className="text-[#e0b238]">KENYA</span>
              
             </span>
           </Link>
@@ -98,7 +98,7 @@ export default function Navbar() {
         <div className="flex items-center space-x-4">
           {/* Login Icon */}
           <Link to="/login">
-            <FaUserCircle className="text-2xl text-gray-700 hover:text-green-700" />
+            <FaUserCircle className="text-2xl text-gray-700 hover:text-[#475B06]" />
           </Link>
 
           {/* Hamburger for Mobile */}

@@ -6,6 +6,7 @@ import Home from "./components/Home";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
 import About from "./components/About";
+import ContactUs from "./components/Contact";
 import Faq from "./components/Faq";
 import UserDashboard from "./components/UserDashboard";
 import HowTujengeWorks from "./components/HowTujengeWorks";
@@ -38,6 +39,7 @@ function App() {
           <Route path="/Login" element={<Login />} />
           <Route path="/Signup" element={<Signup />} />
           <Route path="/Faq" element={<Faq />} />
+          <Route path="/Contact" element={<ContactUs />} />
           <Route path="/verify-otp" element={<VerifyOtp/>} />
           <Route path="/UserDashboard" element={<UserDashboard />} />
           <Route path="/learn/how-tujenge-works" element={<HowTujengeWorks />} />

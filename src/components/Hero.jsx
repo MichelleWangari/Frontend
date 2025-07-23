@@ -13,7 +13,7 @@ export default function Hero() {
         ></path>
       </svg>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 py-24 lg:py-32 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-4">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 py-24 lg:py-32 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-2">
   
         <div className="space-y-6">
           <h1 className="text-4xl md:text-5xl font-bold leading-tight">
@@ -25,8 +25,8 @@ export default function Hero() {
           </p>
           <div className="flex space-x-4">
             <Link
-              to="/save/how-it-works"
-              className="bg-[#FFD700] text-[#475B06] font-semibold px-6 py-3 rounded hover:bg-yellow-400 transition"
+              to="/signup"
+              className="bg-[#EDC001] text-[#475B06] font-semibold px-6 py-3 rounded hover:bg-[#FFD700]  transition"
             >
               Get Started
             </Link>

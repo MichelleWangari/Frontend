@@ -84,10 +84,10 @@ export default function Faq() {
         >
           <button
             onClick={() => toggleIndex(i)}
-            className="w-full flex justify-between items-center px-5 py-4 text-left font-semibold text-2xl text-green-900 hover:bg-gray-50 transition"
+            className="w-full flex justify-between items-center px-5 py-4 text-left font-semibold text-2xl text-[#475B06] hover:bg-gray-50 transition"
           >
             {faq.question}
-            <span className="text-green-700">
+            <span className="text-[#475B06]">
               {activeIndex === i ? <FaMinus /> : <FaPlus />}
             </span>
           </button>

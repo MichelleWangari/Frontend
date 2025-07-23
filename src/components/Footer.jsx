@@ -48,7 +48,7 @@ export default function Footer() {
             off Ngong Rd , Nairobi, Kenya
             </p>
             <p className="text-[#e2e8f0] mb-1"> Call us at : +254 791 527 147</p>
-            <p className="text-[#e2e8f0] mb-4">Email us at: support@tujenge.africa</p>
+            <p className="text-[#e2e8f0] mb-4">Email us at: support@tujenge.kenya</p>
            <div className="flex space-x-4 text-[#e2e8f0] text-lg">
             <a href="#"><FaFacebookF className="hover:text-[#f7c948]" /></a>
             <a href="#"><FaTwitter className="hover:text-[#f7c948]"/></a>

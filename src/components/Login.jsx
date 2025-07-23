@@ -15,7 +15,7 @@ export default function Login() {
         console.log({email , password});
 
         if (email  && password) {
-            navigate("/");
+            navigate("/userdashboard");
         }
     };
 

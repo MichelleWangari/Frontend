@@ -7,10 +7,12 @@ import Login from "./components/Login";
 import Signup from "./components/Signup";
 import About from "./components/About";
 import Faq from "./components/Faq";
+import UserDashboard from "./components/UserDashboard";
 import HowTujengeWorks from "./components/HowTujengeWorks";
 import SuccessStories from "./components/SuccessStories";
 import Opportunities from "./components/Opportunities";
 import GroupSavings from "./components/GroupSavings";
+import VerifyOtp from "./components/VerifyOtp";
 
 // Layout-aware wrapper
 function LayoutWrapper({ children }) {
@@ -36,6 +38,8 @@ function App() {
           <Route path="/Login" element={<Login />} />
           <Route path="/Signup" element={<Signup />} />
           <Route path="/Faq" element={<Faq />} />
+          <Route path="/verify-otp" element={<VerifyOtp/>} />
+          <Route path="/UserDashboard" element={<UserDashboard />} />
           <Route path="/learn/how-tujenge-works" element={<HowTujengeWorks />} />
           <Route path="/invest/stories" element={<SuccessStories />} />
           <Route path="/invest/opportunities" element={<Opportunities />} />

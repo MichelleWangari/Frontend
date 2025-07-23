@@ -1,15 +1,17 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 export default function Signup() {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
 
-  const navigate = useNavigate(); // to redirect after signup
+  const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     const formData = {
@@ -19,14 +21,14 @@ export default function Signup() {
       password,
     };
 
-    // Log data (for now)
-    console.log("Submitting:", formData);
+    try {
+      const response = await axios.post("http://127.0.0.1:8000/signup/", formData);
 
-    // TODO: add validation + backend API call
-
-    // Simulate successful signup
-    if (email && name && phoneNumber && password) {
-      navigate("/login"); // only navigate after all fields are filled
+      console.log("Signup success:", response.data);
+      navigate("/verify-otp");
+    } catch (err) {
+      console.error("Signup error:", err);
+      setError("Signup failed. Please check your details.");
     }
   };
 
@@ -39,6 +41,8 @@ export default function Signup() {
         <h2 className="text-2xl font-bold mb-6 text-center text-gray-800">
           Tujenge Chama Signup
         </h2>
+
+        {error && <p className="text-red-600 mb-4 text-center">{error}</p>}
 
         <div className="mb-4">
           <label className="block text-gray-700 mb-1">Email:</label>
@@ -94,3 +98,4 @@ export default function Signup() {
     </div>
   );
 }
+

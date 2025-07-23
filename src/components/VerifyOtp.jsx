@@ -8,6 +8,7 @@ export default function OtpEntry() {
   const navigate = useNavigate();
   const email = location.state?.email || "";
 
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);

@@ -25,7 +25,11 @@ export default function Signup() {
       const response = await axios.post("http://127.0.0.1:8000/signup/", formData);
 
       console.log("Signup success:", response.data);
-      navigate("/verify-otp");
+      navigate("/verify-otp", {
+        state: {
+        email: email // Pass the email to the OTP page
+      }
+      });
     } catch (err) {
       console.error("Signup error:", err);
       setError("Signup failed. Please check your details.");

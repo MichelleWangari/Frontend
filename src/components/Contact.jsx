@@ -1,8 +1,52 @@
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaClock } from "react-icons/fa";
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
+import axios from "axios";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function ContactUs() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: ""
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const navigate = useNavigate();
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      const response = await axios.post(
+        "http://localhost:8000/contact/", 
+        formData,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          }
+        }
+      );
+
+      if (response.data.success) {
+        toast.success(response.data.message);
+        setTimeout(() => navigate("/faq"), 2000);
+      }
+    } catch (error) {
+      toast.error(error.response?.data?.message || "Submission failed. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gray-50 mt-20">
       {/* Hero Section */}
@@ -19,15 +63,17 @@ export default function ContactUs() {
           {/* Contact Form */}
           <div className="bg-white p-8 rounded-lg shadow-lg">
             <h2 className="text-2xl font-bold text-[#475B06] mb-6">Send us a message</h2>
-            <form className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700">
-                  Your Name
+                  Your Name *
                 </label>
                 <input
                   type="text"
                   id="name"
                   name="name"
+                  value={formData.name}
+                  onChange={handleChange}
                   className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-[#e0b238] focus:border-[#e0b238]"
                   required
                 />
@@ -35,12 +81,14 @@ export default function ContactUs() {
 
               <div>
                 <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-                  Email Address
+                  Email Address *
                 </label>
                 <input
                   type="email"
                   id="email"
                   name="email"
+                  value={formData.email}
+                  onChange={handleChange}
                   className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-[#e0b238] focus:border-[#e0b238]"
                   required
                 />
@@ -54,19 +102,22 @@ export default function ContactUs() {
                   type="text"
                   id="subject"
                   name="subject"
+                  value={formData.subject}
+                  onChange={handleChange}
                   className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-[#e0b238] focus:border-[#e0b238]"
-                  required
                 />
               </div>
 
               <div>
                 <label htmlFor="message" className="block text-sm font-medium text-gray-700">
-                  Message
+                  Message *
                 </label>
                 <textarea
                   id="message"
                   name="message"
                   rows="4"
+                  value={formData.message}
+                  onChange={handleChange}
                   className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-[#e0b238] focus:border-[#e0b238]"
                   required
                 ></textarea>
@@ -75,9 +126,10 @@ export default function ContactUs() {
               <div>
                 <button
                   type="submit"
-                  className="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-[#e0b238] hover:bg-[#f7c948] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#475B06] transition-colors duration-300"
+                  disabled={isSubmitting}
+                  className={`w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-[#e0b238] hover:bg-[#f7c948] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#475B06] transition-colors duration-300 ${isSubmitting ? "opacity-75 cursor-not-allowed" : ""}`}
                 >
-                  Send Message
+                  {isSubmitting ? "Sending..." : "Send Message"}
                 </button>
               </div>
             </form>
@@ -96,7 +148,6 @@ export default function ContactUs() {
                   <div className="ml-4">
                     <h3 className="text-lg font-medium text-gray-900">Phone</h3>
                     <p className="text-gray-600">+254 791 527 147</p>
-
                   </div>
                 </div>
 
@@ -106,7 +157,6 @@ export default function ContactUs() {
                   </div>
                   <div className="ml-4">
                     <h3 className="text-lg font-medium text-gray-900">Email</h3>
-                    
                     <p className="text-gray-600">support@tujenge.kenya</p>
                   </div>
                 </div>
@@ -137,7 +187,6 @@ export default function ContactUs() {
               </div>
             </div>
 
-            {/* Static Social Media Icons */}
             <div className="bg-white p-8 rounded-lg shadow-lg">
               <h2 className="text-2xl font-bold text-[#475B06] mb-6">Find Us On</h2>
               <div className="flex space-x-4">

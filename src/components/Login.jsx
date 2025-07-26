@@ -9,13 +9,44 @@ export default function Login() {
 
     
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        //Add handlelogin logic when backend is ready
-        console.log({email , password});
-
-        if (email  && password) {
-            navigate("/userdashboard");
+        try {
+            const response = await fetch("http://localhost:8000/login/", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    email,
+                    password,
+                }),
+            });
+            if (response.ok) {
+                const data = await response.json();
+                // Save the access token to localStorage
+                localStorage.setItem("access", data.access); // <-- This is the key step!
+                // Optionally, save refresh token if you use it: localStorage.setItem("refresh", data.refresh);
+                // Redirect based on role, etc.
+                if (data.is_verified === false) {
+                    alert("Please verify your account with the OTP sent to your email.");
+                    navigate("/otp", { state: { email } });
+                } else {
+                    alert("Login successful!");
+                    if (data.role === "member") {
+                        navigate("/dashboard/member");
+                    } else if (data.role === "admin" || data.role === "treasurer") {
+                        navigate("/dashboard/executive");
+                    } else {
+                        navigate("/");
+                    }
+                }
+            } else {
+                const errorData = await response.json();
+                alert("Login failed: " + JSON.stringify(errorData));
+            }
+        } catch (error) {
+            alert("Network error: " + error.message);
         }
     };
 

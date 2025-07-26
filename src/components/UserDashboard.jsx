@@ -18,7 +18,7 @@ const UserDashboard = () => {
     <div className="bg-white min-h-screen">
    
 
-      <section className="bg-[#047056] text-white py-10 px-6 shadow-md mt-20 ">
+      <section className="bg-[#475B06]  text-white py-10 px-6 shadow-md mt-20 ">
         <h1 className="text-3xl font-bold mb-2">Welcome back, Member! 👋</h1>
         <p className="text-lg">Manage your Chamas, contributions & savings all in one place.</p>
       </section>

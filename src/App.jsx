@@ -14,6 +14,8 @@ import SuccessStories from "./components/SuccessStories";
 import Opportunities from "./components/Opportunities";
 import GroupSavings from "./components/GroupSavings";
 import VerifyOtp from "./components/VerifyOtp";
+import DashboardLayout from "./components/dashboard/shared/DashboardLayout";
+import ExecutiveDashboardLayout from "./components/dashboard/shared/ExecutiveDashboardLayout";
 
 // Layout-aware wrapper
 function LayoutWrapper({ children }) {
@@ -46,6 +48,8 @@ function App() {
           <Route path="/invest/stories" element={<SuccessStories />} />
           <Route path="/invest/opportunities" element={<Opportunities />} />
           <Route path="/save/group" element={<GroupSavings />} />
+          <Route path="/dashboard/member" element={<DashboardLayout />} />
+          <Route path="/dashboard/executive" element={<ExecutiveDashboardLayout />} />
         </Routes>
       </LayoutWrapper>
     </Router>

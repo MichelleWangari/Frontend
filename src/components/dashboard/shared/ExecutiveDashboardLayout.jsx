@@ -3,12 +3,8 @@ import { Link, Outlet, useLocation } from "react-router-dom";
 const navLinks = [
   { to: "/dashboard/executive", label: "Overview" },
   { to: "/dashboard/executive/members", label: "Members" },
-  { to: "/dashboard/executive/approvals", label: "Approvals" },
   { to: "/dashboard/executive/loans", label: "Loans" },
   { to: "/dashboard/executive/vaults", label: "Vaults" },
-  { to: "/dashboard/executive/investments", label: "Investments" },
-  { to: "/dashboard/executive/meetings", label: "Meetings" },
-  { to: "/dashboard/executive/reports", label: "Reports" },
   { to: "/dashboard/executive/settings", label: "Settings" },
 ];
 
